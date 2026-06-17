@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services & Réparations — PhoneStore</title>
+  <meta name="description" content="Réparation rapide de smartphones toutes marques. Écrans, batteries, caméras. Devis gratuit.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    /* ── Services page only ── */
+
+    /* Hero services */
+    .svc-hero {
+      padding: 130px 2.5rem 5rem;
+      background:
+        radial-gradient(ellipse 60% 55% at 30% 50%, rgba(0,106,132,0.16) 0%, transparent 65%),
+        linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
+      position: relative; overflow: hidden;
+    }
+    .svc-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(0,200,232,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,200,232,0.03) 1px, transparent 1px);
+      background-size: 55px 55px;
+    }
+    .svc-hero-inner {
+      max-width: 700px; margin: 0 auto;
+      text-align: center; position: relative; z-index: 1;
+    }
+    .svc-hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 800; line-height: 1.1;
+      letter-spacing: -0.03em; color: var(--text);
+      margin-bottom: 1.2rem;
+    }
+    .svc-hero-title .accent {
+      background: linear-gradient(135deg, var(--primary-light), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .svc-hero-sub {
+      font-size: 1.05rem; color: var(--text-muted);
+      line-height: 1.75; margin-bottom: 2rem; max-width: 520px; margin-left: auto; margin-right: auto;
+    }
+    .svc-hero-badges {
+      display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;
+    }
+    .svc-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(0,106,132,0.12); border: 1px solid rgba(0,200,232,0.25);
+      border-radius: 999px; padding: 6px 14px;
+      font-size: 0.8rem; font-weight: 600; color: var(--accent);
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      background: var(--dark-3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+    }
+    .stats-bar-inner {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center;
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem; font-weight: 800; color: var(--text); line-height: 1;
+    }
+    .stat-num span { color: var(--accent); }
+    .stat-lbl { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* Why us */
+    .why-section { padding: 5rem 2.5rem; background: var(--dark-2); }
+    .why-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.1rem;
+    }
+
+    /* Repair cards (pricing) */
+    .repairs-section { padding: 5rem 2.5rem; background: var(--dark); }
+    .repairs-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1.25rem;
+    }
+    .repair-card {
+      background: var(--dark-3); border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; transition: all var(--transition); position: relative;
+    }
+    .repair-card:hover {
+      border-color: rgba(0,106,132,0.35); transform: translateY(-5px);
+      box-shadow: 0 16px 42px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,200,232,0.1);
+    }
+    .repair-card-img {
+      width: 100%; height: 170px; background: var(--dark-4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem; position: relative; overflow: hidden;
+    }
+    .repair-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .repair-card:hover .repair-card-img img { transform: scale(1.06); }
+    .repair-card-img .emoji-fallback {
+      font-size: 3.5rem; position: absolute;
+    }
+    .repair-label {
+      position: absolute; top: 10px; left: 10px;
+      background: var(--primary); color: white;
+      font-size: 0.63rem; font-weight: 700; padding: 3px 8px;
+      border-radius: 6px; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .repair-card-body { padding: 1.1rem 1.25rem 1.4rem; }
+    .repair-card-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 0.4rem;
+    }
+    .repair-card-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 1rem; }
+    .repair-card-footer { display: flex; align-items: center; justify-content: space-between; }
+    .repair-price {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem; font-weight: 800; color: var(--accent);
+    }
+    .repair-price small { font-size: 0.7rem; font-weight: 400; color: var(--text-muted); }
+    .repair-time {
+      font-size: 0.75rem; color: var(--text-muted);
+      background: var(--dark-4); border-radius: 6px; padding: 4px 10px;
+      display: flex; align-items: center; gap: 4px;
+    }
+
+    /* Brand compatibility */
+    .compat-section { padding: 4rem 2.5rem; background: var(--dark-2); }
+    .compat-grid {
+      max-width: 900px; margin: 0 auto;
+      display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .compat-pill {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--dark-3); border: 1px solid var(--border);
+      border-radius: 999px; padding: 9px 22px;
+      font-weight: 600; font-size: 0.88rem; color: var(--text);
+      transition: all var(--transition);
+    }
+    .compat-pill:hover { border-color: var(--primary-light); background: rgba(0,106,132,0.1); }
+    .compat-pill span { font-size: 1.1rem; }
+
+    /* CTA band */
+    .cta-band {
+      padding: 4rem 2.5rem; background: var(--dark);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .cta-band-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800;
+      color: var(--text); margin-bottom: 0.75rem;
+    }
+    .cta-band-sub { color: var(--text-muted); margin-bottom: 1.75rem; font-size: 0.95rem; }
+    .cta-band-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+    /* Section bg alternation */
+    .bg-dark  { background: var(--dark); }
+    .bg-dark2 { background: var(--dark-2); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
+      .svc-hero { padding: 110px 1.5rem 4rem; }
+      .why-section, .repairs-section, .compat-section { padding-left: 1.25rem; padding-right: 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      .stats-bar-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .repairs-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar-brand">
+      <img src="logo.svg" alt="PhoneStore Logo">
+      <span class="brand-name">Phone<span>Store</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="telephones.html">Téléphones</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="reservation.html">Réserver</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" class="nav-cta">Connexion</a></li>
+    </ul>
+    <div class="nav-user" id="navUser" style="display:none">
+      <span class="nav-user-badge" id="userBadge"></span>
+      <a href="#" id="logoutBtn">Se déconnecter</a>
+    </div>
+    <div class="hamburger" id="hamburger" role="button" aria-label="Menu" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section class="svc-hero">
+    <div class="svc-hero-inner reveal">
+      <div class="hero-eyebrow" style="justify-content:center;">
+        <span class="eyebrow-dot"></span>
+        Réparation rapide & garantie
+      </div>
+      <h1 class="svc-hero-title">
+        Votre téléphone réparé<br>
+        <span class="accent">le jour même</span>
+      </h1>
+      <p class="svc-hero-sub">
+        Écran cassé, batterie usée, caméra HS ? Nos techniciens certifiés réparent toutes marques avec des pièces de qualité et une garantie 6 mois.
+      </p>
+      <div class="svc-hero-badges">
+        <span class="svc-badge">✅ Devis gratuit</span>
+        <span class="svc-badge">🔧 Techniciens certifiés</span>
+        <span class="svc-badge">🛡️ Garantie 6 mois</span>
+        <span class="svc-badge">⚡ Dès 30 minutes</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STATS BAR ══ -->
+  <div class="stats-bar">
+    <div class="stats-bar-inner">
+      <div class="stat-item reveal">
+        <div class="stat-num">2500<span>+</span></div>
+        <div class="stat-lbl">Réparations effectuées</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num">98<span>%</span></div>
+        <div class="stat-lbl">Clients satisfaits</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num">30<span>min</span></div>
+        <div class="stat-lbl">Délai moyen écran</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num">6<span>mois</span></div>
+        <div class="stat-lbl">Garantie pièces & main d'œuvre</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ POURQUOI NOUS ══ -->
+  <section class="why-section">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Nos engagements</p>
+      <h2 class="section-title">Pourquoi nous choisir ?</h2>
+      <p class="section-subtitle">Des raisons concrètes de nous faire confiance</p>
+    </div>
+    <div class="why-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">💰</div>
+        <h3 class="feature-title">Meilleurs prix garantis</h3>
+        <p class="feature-desc">Nous affichons des tarifs transparents sans surprise. Si vous trouvez moins cher ailleurs, nous nous alignons.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">⚡</div>
+        <h3 class="feature-title">Réparation express</h3>
+        <p class="feature-desc">La majorité de nos réparations sont réalisées en 30 à 60 minutes. Vous attendez sur place, votre café offert.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🔩</div>
+        <h3 class="feature-title">Pièces certifiées</h3>
+        <p class="feature-desc">Nous utilisons exclusivement des pièces d'origine ou de qualité OEM avec traçabilité complète.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🛡️</div>
+        <h3 class="feature-title">Garantie 6 mois</h3>
+        <p class="feature-desc">Toutes nos réparations sont couvertes 6 mois. Pièce défectueuse ? On reprend sans frais.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🔍</div>
+        <h3 class="feature-title">Diagnostic gratuit</h3>
+        <p class="feature-desc">Vous n'êtes jamais engagé sans avoir accepté un devis. Le diagnostic est 100 % offert, sans obligation.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📦</div>
+        <h3 class="feature-title">Données protégées</h3>
+        <p class="feature-desc">Votre vie privée est sacrée. Aucune réparation n'accède à vos données sans votre consentement explicite.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TARIFS RÉPARATIONS ══ -->
+  <section class="repairs-section">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Tarifs</p>
+      <h2 class="section-title">Nos prestations de réparation</h2>
+      <p class="section-subtitle">Prix indicatifs — devis gratuit & personnalisé en boutique</p>
+    </div>
+    <div class="repairs-grid">
+
+      <!-- Remplacement écran -->
+      <div class="repair-card reveal">
+        <div class="repair-card-img">
+          <span class="repair-label">Le + demandé</span>
+          <img
+            src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600&q=80"
+            alt="Remplacement écran smartphone"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="emoji-fallback" style="display:none">📱</span>
+        </div>
+        <div class="repair-card-body">
+          <div class="repair-card-name">Remplacement d'écran</div>
+          <div class="repair-card-desc">Écran fissuré ou non réactif ? Remplacement complet avec dalle OLED/LCD selon votre modèle.</div>
+          <div class="repair-card-footer">
+            <div class="repair-price">À partir de 39€ <small>/ modèle</small></div>
+            <div class="repair-time">⏱ 30–45 min</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Batterie -->
+      <div class="repair-card reveal">
+        <div class="repair-card-img">
+          <img
+            src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80"
+            alt="Remplacement batterie"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="emoji-fallback" style="display:none">🔋</span>
+        </div>
+        <div class="repair-card-body">
+          <div class="repair-card-name">Remplacement de batterie</div>
+          <div class="repair-card-desc">Autonomie réduite, arrêts inattendus ? Batterie neuve certifiée, capacité d'origine restaurée.</div>
+          <div class="repair-card-footer">
+            <div class="repair-price">À partir de 29€ <small>/ modèle</small></div>
+            <div class="repair-time">⏱ 20–40 min</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Caméra -->
+      <div class="repair-card reveal">
+        <div class="repair-card-img">
+          <img
+            src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?w=600&q=80"
+            alt="Réparation caméra"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="emoji-fallback" style="display:none">📷</span>
+        </div>
+        <div class="repair-card-body">
+          <div class="repair-card-name">Réparation caméra</div>
+          <div class="repair-card-desc">Flou, taches noires, caméra qui ne s'ouvre plus ? Diagnostic et remplacement du module optique.</div>
+          <div class="repair-card-footer">
+            <div class="repair-price">À partir de 35€ <small>/ modèle</small></div>
+            <div class="repair-time">⏱ 45–60 min</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connecteur charge -->
+      <div class="repair-card reveal">
+        <div class="repair-card-img">
+          <img
+            src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=600&q=80"
+            alt="Réparation connecteur de charge"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="emoji-fallback" style="display:none">🔌</span>
+        </div>
+        <div class="repair-card-body">
+          <div class="repair-card-name">Connecteur de charge</div>
+          <div class="repair-card-desc">Port USB-C, Lightning ou micro-USB endommagé ou encrassé. Nettoyage ou remplacement complet.</div>
+          <div class="repair-card-footer">
+            <div class="repair-price">À partir de 25€ <small>/ modèle</small></div>
+            <div class="repair-time">⏱ 30–50 min</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Haut-parleur / micro -->
+      <div class="repair-card reveal">
+        <div class="repair-card-img">
+          <img
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+            alt="Réparation haut-parleur"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="emoji-fallback" style="display:none">🔊</span>
+        </div>
+        <div class="repair-card-body">
+          <div class="repair-card-name">Haut-parleur & micro</div>
+          <div class="repair-card-desc">Son grésillant, interlocuteur qui ne vous entend plus ? Remplacement du haut-parleur ou du micro.</div>
+          <div class="repair-card-footer">
+            <div class="repair-price">À partir de 22€ <small>/ modèle</small></div>
+            <div class="repair-time">⏱ 30–45 min</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dégât des eaux -->
+      <div class="repair-card reveal">
+        <div class="repair-card-img">
+          <img
+            src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=600&q=80"
+            alt="Réparation dégât des eaux"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="emoji-fallback" style="display:none">💧</span>
+        </div>
+        <div class="repair-card-body">
+          <div class="repair-card-name">Dégât des eaux</div>
+          <div class="repair-card-desc">Téléphone tombé dans l'eau ? Intervention rapide, nettoyage ultrason et séchage professionnel.</div>
+          <div class="repair-card-footer">
+            <div class="repair-price">À partir de 45€ <small>/ diagnostic</small></div>
+            <div class="repair-time">⏱ Selon gravité</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ COMPATIBILITÉS ══ -->
+  <section class="compat-section">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Toutes marques</p>
+      <h2 class="section-title">Nous réparons tous vos appareils</h2>
+    </div>
+    <div class="compat-grid">
+      <div class="compat-pill reveal"><span>📱</span> Samsung Galaxy</div>
+      <div class="compat-pill reveal"><span>🍎</span> Apple iPhone</div>
+      <div class="compat-pill reveal"><span>🔴</span> Xiaomi Redmi</div>
+      <div class="compat-pill reveal"><span>🟢</span> OPPO</div>
+      <div class="compat-pill reveal"><span>🔵</span> Huawei</div>
+      <div class="compat-pill reveal"><span>⚫</span> OnePlus</div>
+      <div class="compat-pill reveal"><span>🟡</span> Realme</div>
+      <div class="compat-pill reveal"><span>🟣</span> Sony Xperia</div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section class="cta-band reveal">
+    <h2 class="cta-band-title">Votre téléphone a besoin d'aide ?</h2>
+    <p class="cta-band-sub">Venez en boutique ou contactez-nous — devis gratuit en 5 minutes.</p>
+    <div class="cta-band-actions">
+      <a href="contact.html" class="btn-primary">
+        Demander un devis gratuit
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="reservation.html" class="btn-secondary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Prendre rendez-vous
+      </a>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <img src="logo.svg" alt="Logo" class="footer-brand-logo">
+        <div class="footer-brand-name">Phone<span>Store</span></div>
+        <p class="footer-desc">Vente et réparation de smartphones toutes marques. Techniciens certifiés, pièces de qualité, garantie 6 mois.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Navigation</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="telephones.html">Téléphones</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Réparations</p>
+        <ul class="footer-links">
+          <li><a href="services.html#ecran">Écran cassé</a></li>
+          <li><a href="services.html#batterie">Batterie</a></li>
+          <li><a href="services.html#camera">Caméra</a></li>
+          <li><a href="services.html#eau">Dégât des eaux</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <ul class="footer-links">
+          <li><a href="contact.html">Nous écrire</a></li>
+          <li><a href="reservation.html">Réserver</a></li>
+          <li><a href="login.html">Mon compte</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PhoneStore. Tous droits réservés.</span>
+      <span>Fait avec ❤️ — Paris, France</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"><span id="toastIcon"></span><span id="toastMsg"></span></div>
+  <script src="script.js" defer></script>
+</body>
+</html>

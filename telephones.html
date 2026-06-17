@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nos Téléphones — PhoneStore</title>
+  <meta name="description" content="Découvrez notre catalogue complet : Samsung Galaxy, iPhone, Xiaomi Redmi, OPPO.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar-brand">
+      <img src="logo.svg" alt="PhoneStore Logo">
+      <span class="brand-name">Phone<span>Store</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="telephones.html" class="active">Téléphones</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="reservation.html">Réserver</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" class="nav-cta">Connexion</a></li>
+    </ul>
+    <div class="nav-user" id="navUser" style="display:none">
+      <span class="nav-user-badge" id="userBadge"></span>
+      <a href="#" id="logoutBtn">Se déconnecter</a>
+    </div>
+    <div class="hamburger" id="hamburger" role="button" aria-label="Menu" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ══ MAIN ══ -->
+  <main class="phones-page">
+
+    <div class="phones-page-header">
+      <h1 class="page-title">Notre <span class="accent">catalogue</span></h1>
+      <p class="page-subtitle">30+ modèles disponibles — Samsung, Apple, Xiaomi, OPPO</p>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="filter-bar">
+      <span class="filter-label">Filtrer :</span>
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="samsung">Samsung</button>
+      <button class="filter-btn" data-filter="apple">Apple</button>
+      <button class="filter-btn" data-filter="xiaomi">Xiaomi</button>
+      <button class="filter-btn" data-filter="oppo">OPPO</button>
+    </div>
+
+    <!-- ─── SAMSUNG ─── -->
+    <div class="brand-section" id="samsung" data-brand="samsung">
+      <div class="brand-section-header">
+        <h2 class="brand-section-title">Samsung Galaxy</h2>
+        <span class="brand-section-count">9 modèles</span>
+      </div>
+      <div class="phone-list phones-grid">
+
+        <div class="phone-card" data-brand="samsung">
+          <div class="phone-card-img">
+            <span class="phone-card-badge">Nouveau</span>
+            <img src="phones/samsung s25 ultra.avif" alt="Samsung Galaxy S25 Ultra" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Galaxy S25 Ultra</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">200 MP</span>
+              <span class="spec-tag">5G</span>
+              <span class="spec-tag">S Pen</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Samsung%20Galaxy%20S25%20Ultra" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="samsung">
+          <div class="phone-card-img">
+            <span class="phone-card-badge">Nouveau</span>
+            <img src="phones/samsung s25+.avif" alt="Samsung Galaxy S25+" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Galaxy S25+</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">50 MP</span>
+              <span class="spec-tag">5G</span>
+              <span class="spec-tag">12 Go RAM</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Samsung%20Galaxy%20S25%2B" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="samsung">
+          <div class="phone-card-img">
+            <span class="phone-card-badge">Nouveau</span>
+            <img src="phones/samsung s25.avif" alt="Samsung Galaxy S25" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Galaxy S25</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">50 MP</span>
+              <span class="spec-tag">5G</span>
+              <span class="spec-tag">Snapdragon</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Samsung%20Galaxy%20S25" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="samsung">
+          <div class="phone-card-img">
+            <img src="phones/samsung-z-fold6.avif" alt="Samsung Galaxy Z Fold 6" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Galaxy Z Fold 6</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">Pliable</span>
+              <span class="spec-tag">7.6"</span>
+              <span class="spec-tag">5G</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Samsung%20Galaxy%20Z%20Fold6" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="samsung">
+          <div class="phone-card-img">
+            <img src="phones/samsung-zflip6.avif" alt="Samsung Galaxy Z Flip 6" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Galaxy Z Flip 6</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">Compact</span>
+              <span class="spec-tag">Pliable</span>
+              <span class="spec-tag">5G</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Samsung%20Galaxy%20Z%20Flip6" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="samsung">
+          <div class="phone-card-img">
+            <img src="phones/samsung s24.avif" alt="Samsung Galaxy S24" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Galaxy S24</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">50 MP</span>
+              <span class="spec-tag">5G</span>
+              <span class="spec-tag">AI</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Samsung%20Galaxy%20S24" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="samsung">
+          <div class="phone-card-img">
+            <img src="phones/samsung s24fe.webp" alt="Samsung Galaxy S24 FE" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Galaxy S24 FE</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">50 MP</span>
+              <span class="spec-tag">5G</span>
+              <span class="spec-tag">Fan Edition</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Samsung%20Galaxy%20S24%20FE" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="samsung">
+          <div class="phone-card-img">
+            <img src="phones/samsung a56-5g.avif" alt="Samsung Galaxy A56 5G" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Galaxy A56 5G</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">50 MP</span>
+              <span class="spec-tag">5G</span>
+              <span class="spec-tag">6.7"</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Samsung%20Galaxy%20A56%205G" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="samsung">
+          <div class="phone-card-img">
+            <img src="phones/samsung a36.webp" alt="Samsung Galaxy A36" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Galaxy A36</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">50 MP</span>
+              <span class="spec-tag">5G</span>
+              <span class="spec-tag">5000 mAh</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Samsung%20Galaxy%20A36" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── APPLE ─── -->
+    <div class="brand-section" id="apple" data-brand="apple">
+      <div class="brand-section-header">
+        <h2 class="brand-section-title">Apple iPhone</h2>
+        <span class="brand-section-count">5 modèles</span>
+      </div>
+      <div class="phone-list phones-grid">
+
+        <div class="phone-card" data-brand="apple">
+          <div class="phone-card-img">
+            <span class="phone-card-badge">Nouveau</span>
+            <img src="phones/iphone16pro.jpeg" alt="iPhone 16 Pro" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">iPhone 16 Pro / Pro Max</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">A18 Pro</span>
+              <span class="spec-tag">48 MP</span>
+              <span class="spec-tag">ProRes</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=iPhone%2016%20Pro" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="apple">
+          <div class="phone-card-img">
+            <span class="phone-card-badge">Nouveau</span>
+            <img src="phones/iphone16.jpeg" alt="iPhone 16" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">iPhone 16 / 16 Plus</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">A18</span>
+              <span class="spec-tag">48 MP</span>
+              <span class="spec-tag">5G</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=iPhone%2016" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="apple">
+          <div class="phone-card-img">
+            <img src="phones/iphone-16e.jpeg" alt="iPhone 16e" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">iPhone 16e</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">A16</span>
+              <span class="spec-tag">Compact</span>
+              <span class="spec-tag">5G</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=iPhone%2016e" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="apple">
+          <div class="phone-card-img">
+            <img src="phones/iphone15.jpeg" alt="iPhone 15" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">iPhone 15</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">A16</span>
+              <span class="spec-tag">48 MP</span>
+              <span class="spec-tag">USB-C</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=iPhone%2015" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="apple">
+          <div class="phone-card-img">
+            <img src="phones/iphone_14.jpeg" alt="iPhone 14" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">iPhone 14</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">A15</span>
+              <span class="spec-tag">12 MP</span>
+              <span class="spec-tag">5G</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=iPhone%2014" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── XIAOMI ─── -->
+    <div class="brand-section" id="xiaomi" data-brand="xiaomi">
+      <div class="brand-section-header">
+        <h2 class="brand-section-title">Xiaomi Redmi</h2>
+        <span class="brand-section-count">6 modèles</span>
+      </div>
+      <div class="phone-list phones-grid">
+
+        <div class="phone-card" data-brand="xiaomi">
+          <div class="phone-card-img">
+            <span class="phone-card-badge">Nouveau</span>
+            <img src="phones/redmi note14 pro 5g.webp" alt="Redmi Note 14 Pro 5G" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Redmi Note 14 Pro 5G</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">200 MP</span>
+              <span class="spec-tag">5G</span>
+              <span class="spec-tag">67W</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Redmi%20Note%2014%20Pro%205G" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="xiaomi">
+          <div class="phone-card-img">
+            <img src="phones/redmi note14.webp" alt="Redmi Note 14" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Redmi Note 14</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">108 MP</span>
+              <span class="spec-tag">4G</span>
+              <span class="spec-tag">5160 mAh</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Redmi%20Note%2014" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="xiaomi">
+          <div class="phone-card-img">
+            <img src="phones/redmi 14c.webp" alt="Redmi 14C" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Redmi 14C</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">50 MP</span>
+              <span class="spec-tag">4G</span>
+              <span class="spec-tag">5160 mAh</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Redmi%2014C" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="xiaomi">
+          <div class="phone-card-img">
+            <img src="phones/redmi 13c.webp" alt="Redmi 13C" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Redmi 13C</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">50 MP</span>
+              <span class="spec-tag">4G</span>
+              <span class="spec-tag">5000 mAh</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Redmi%2013C" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="xiaomi">
+          <div class="phone-card-img">
+            <img src="phones/redmi a3.webp" alt="Redmi A3" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Redmi A3</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">8 MP</span>
+              <span class="spec-tag">4G</span>
+              <span class="spec-tag">5000 mAh</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Redmi%20A3" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="xiaomi">
+          <div class="phone-card-img">
+            <img src="phones/redmi a5.webp" alt="Redmi A5" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">Redmi A5</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">8 MP</span>
+              <span class="spec-tag">4G</span>
+              <span class="spec-tag">5000 mAh</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=Redmi%20A5" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── OPPO ─── -->
+    <div class="brand-section" id="oppo" data-brand="oppo">
+      <div class="brand-section-header">
+        <h2 class="brand-section-title">OPPO</h2>
+        <span class="brand-section-count">6 modèles</span>
+      </div>
+      <div class="phone-list phones-grid">
+
+        <div class="phone-card" data-brand="oppo">
+          <div class="phone-card-img">
+            <span class="phone-card-badge">Nouveau</span>
+            <img src="phones/OPPO Find X8 Pro.png" alt="OPPO Find X8 Pro" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">OPPO Find X8 Pro</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">50 MP</span>
+              <span class="spec-tag">5G</span>
+              <span class="spec-tag">Hasselblad</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=OPPO%20Find%20X8%20Pro" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="oppo">
+          <div class="phone-card-img">
+            <img src="phones/oppo Reno13F.png" alt="OPPO Reno 13F" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">OPPO Reno 13F</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">50 MP</span>
+              <span class="spec-tag">5G</span>
+              <span class="spec-tag">45W</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=OPPO%20Reno%2013F" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="oppo">
+          <div class="phone-card-img">
+            <img src="phones/OPPO Find X3 Pro.png" alt="OPPO Find X3 Pro" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">OPPO Find X3 Pro</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">50 MP</span>
+              <span class="spec-tag">5G</span>
+              <span class="spec-tag">65W</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=OPPO%20Find%20X3%20Pro" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="oppo">
+          <div class="phone-card-img">
+            <img src="phones/OPPO Find X3 Neo.png" alt="OPPO Find X3 Neo" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">OPPO Find X3 Neo</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">50 MP</span>
+              <span class="spec-tag">5G</span>
+              <span class="spec-tag">65W</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=OPPO%20Find%20X3%20Neo" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="oppo">
+          <div class="phone-card-img">
+            <img src="phones/OPPO Find X3 Lite.png" alt="OPPO Find X3 Lite" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">OPPO Find X3 Lite</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">64 MP</span>
+              <span class="spec-tag">5G</span>
+              <span class="spec-tag">65W</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=OPPO%20Find%20X3%20Lite" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-brand="oppo">
+          <div class="phone-card-img">
+            <img src="phones/OPPO A40.png" alt="OPPO A40" loading="lazy">
+          </div>
+          <div class="phone-card-body">
+            <div class="phone-card-name">OPPO A40</div>
+            <div class="phone-card-specs">
+              <span class="spec-tag">50 MP</span>
+              <span class="spec-tag">4G</span>
+              <span class="spec-tag">5100 mAh</span>
+            </div>
+            <div class="phone-card-action">
+              <a href="reservation.html?modele=OPPO%20A40" class="btn-reserve">Réserver</a>
+              <button class="btn-wishlist" title="Favoris">♡</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <img src="logo.svg" alt="Logo" class="footer-brand-logo">
+        <div class="footer-brand-name">Phone<span>Store</span></div>
+        <p class="footer-desc">Votre destination pour les meilleurs smartphones des plus grandes marques mondiales.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Navigation</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="telephones.html">Téléphones</a></li>
+          <li><a href="services.html">Services</a></li>
+      <li><a href="reservation.html">Réserver</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Marques</p>
+        <ul class="footer-links">
+          <li><a href="#samsung">Samsung</a></li>
+          <li><a href="#apple">Apple iPhone</a></li>
+          <li><a href="#xiaomi">Xiaomi Redmi</a></li>
+          <li><a href="#oppo">OPPO</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Compte</p>
+        <ul class="footer-links">
+          <li><a href="login.html">Connexion</a></li>
+          <li><a href="reservation.html">Mes réservations</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PhoneStore. Tous droits réservés.</span>
+      <span>Fait avec ❤️ — Paris, France</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"><span id="toastIcon"></span><span id="toastMsg"></span></div>
+  <script src="script.js" defer></script>
+</body>
+</html>

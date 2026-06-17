@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Réserver — PhoneStore</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar-brand">
+      <img src="logo.svg" alt="PhoneStore Logo">
+      <span class="brand-name">Phone<span>Store</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="telephones.html">Téléphones</a></li>
+      <li><a href="reservation.html" class="active">Réserver</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" class="nav-cta">Connexion</a></li>
+    </ul>
+    <div class="nav-user" id="navUser" style="display:none">
+      <span class="nav-user-badge" id="userBadge"></span>
+      <a href="#" id="logoutBtn">Se déconnecter</a>
+    </div>
+    <div class="hamburger" id="hamburger" role="button" aria-label="Menu" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ══ FORM ══ -->
+  <main class="form-page">
+    <div class="form-container" style="max-width:500px;">
+
+      <div class="form-logo">
+        <img src="logo.svg" alt="Logo">
+        <span class="form-logo-name">Phone<span>Store</span></span>
+      </div>
+
+      <h1 class="form-title">Réserver un téléphone</h1>
+      <p class="form-subtitle">Complétez le formulaire — nous vous confirmons par e-mail sous 24h.</p>
+
+      <div class="form-notice">
+        <span>📦</span>
+        <span>Paiement à la livraison · Retrait en boutique disponible · Livraison 24–48h</span>
+      </div>
+
+      <form id="reservation-form">
+
+        <div class="form-group">
+          <label class="form-label" for="modele">Modèle souhaité</label>
+          <select class="form-select" id="modele" name="modele" required>
+            <option value="" disabled selected>Choisir un modèle…</option>
+            <optgroup label="Samsung Galaxy">
+              <option value="Samsung Galaxy S25 Ultra">Samsung Galaxy S25 Ultra</option>
+              <option value="Samsung Galaxy S25+">Samsung Galaxy S25+</option>
+              <option value="Samsung Galaxy S25">Samsung Galaxy S25</option>
+              <option value="Samsung Galaxy Z Fold6">Samsung Galaxy Z Fold 6</option>
+              <option value="Samsung Galaxy Z Flip6">Samsung Galaxy Z Flip 6</option>
+              <option value="Samsung Galaxy S24">Samsung Galaxy S24</option>
+              <option value="Samsung Galaxy S24 FE">Samsung Galaxy S24 FE</option>
+              <option value="Samsung Galaxy A56 5G">Samsung Galaxy A56 5G</option>
+              <option value="Samsung Galaxy A36">Samsung Galaxy A36</option>
+            </optgroup>
+            <optgroup label="Apple iPhone">
+              <option value="iPhone 16 Pro">iPhone 16 Pro</option>
+              <option value="iPhone 16 Pro Max">iPhone 16 Pro Max</option>
+              <option value="iPhone 16">iPhone 16</option>
+              <option value="iPhone 16 Plus">iPhone 16 Plus</option>
+              <option value="iPhone 16e">iPhone 16e</option>
+              <option value="iPhone 15">iPhone 15</option>
+              <option value="iPhone 14">iPhone 14</option>
+            </optgroup>
+            <optgroup label="Xiaomi Redmi">
+              <option value="Redmi Note 14 Pro 5G">Redmi Note 14 Pro 5G</option>
+              <option value="Redmi Note 14">Redmi Note 14</option>
+              <option value="Redmi 14C">Redmi 14C</option>
+              <option value="Redmi 13C">Redmi 13C</option>
+              <option value="Redmi A3">Redmi A3</option>
+              <option value="Redmi A5">Redmi A5</option>
+            </optgroup>
+            <optgroup label="OPPO">
+              <option value="OPPO Find X8 Pro">OPPO Find X8 Pro</option>
+              <option value="OPPO Reno 13F">OPPO Reno 13F</option>
+              <option value="OPPO Find X3 Pro">OPPO Find X3 Pro</option>
+              <option value="OPPO Find X3 Neo">OPPO Find X3 Neo</option>
+              <option value="OPPO Find X3 Lite">OPPO Find X3 Lite</option>
+              <option value="OPPO A40">OPPO A40</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="couleur">Couleur (optionnel)</label>
+          <input class="form-input" type="text" id="couleur" name="couleur" placeholder="Ex : Noir, Blanc, Titane…">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="nom">Nom complet</label>
+          <input class="form-input" type="text" id="nom" name="nom" placeholder="Prénom Nom" required autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Adresse e-mail</label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="vous@exemple.com" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="telephone">Téléphone (optionnel)</label>
+          <input class="form-input" type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00" autocomplete="tel">
+        </div>
+
+        <button type="submit" class="btn-form">
+          Confirmer la réservation →
+        </button>
+      </form>
+
+      <p class="form-extra" style="margin-top:1.25rem;">
+        Besoin d'aide ? <a href="contact.html" class="form-link">Contactez-nous</a>
+      </p>
+
+    </div>
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-bottom" style="max-width:1200px;margin:0 auto;padding-top:0;border-top:none;">
+      <span>© 2025 PhoneStore. Tous droits réservés.</span>
+      <span><a href="contact.html">Contact</a> · <a href="telephones.html">Catalogue</a></span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"><span id="toastIcon"></span><span id="toastMsg"></span></div>
+  <script src="script.js" defer></script>
+</body>
+</html>

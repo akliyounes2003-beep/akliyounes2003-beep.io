@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connexion — PhoneStore</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar-brand">
+      <img src="logo.svg" alt="PhoneStore Logo">
+      <span class="brand-name">Phone<span>Store</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="telephones.html">Téléphones</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="reservation.html">Réserver</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" class="nav-cta active">Connexion</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" role="button" aria-label="Menu" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ══ FORM ══ -->
+  <main class="form-page">
+    <div class="form-container">
+
+      <div class="form-logo">
+        <img src="logo.svg" alt="Logo">
+        <span class="form-logo-name">Phone<span>Store</span></span>
+      </div>
+
+      <h1 class="form-title">Bienvenue 👋</h1>
+      <p class="form-subtitle">Connectez-vous pour accéder à votre espace client.</p>
+
+      <div class="form-notice">
+        <span>ℹ️</span>
+        <span>Compte de démonstration : <strong>demo@phonestore.fr</strong> / <strong>demo1234</strong></span>
+      </div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label class="form-label" for="email">Adresse e-mail</label>
+          <input
+            class="form-input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="vous@exemple.com"
+            required
+            autocomplete="email"
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Mot de passe</label>
+          <input
+            class="form-input"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="••••••••"
+            required
+            autocomplete="current-password"
+          >
+        </div>
+
+        <div style="text-align:right;margin-bottom:1.2rem;">
+          <a href="#" class="form-link" style="font-size:0.82rem;">Mot de passe oublié ?</a>
+        </div>
+
+        <button type="submit" class="btn-form">Se connecter</button>
+      </form>
+
+      <div class="form-divider">ou</div>
+
+      <p class="form-extra">
+        Pas encore de compte ?
+        <a href="reservation.html" class="form-link">Réserver sans compte</a>
+      </p>
+
+    </div>
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-bottom" style="max-width:1200px;margin:0 auto;padding-top:0;border-top:none;">
+      <span>© 2025 PhoneStore. Tous droits réservés.</span>
+      <span><a href="contact.html">Contact</a> · <a href="telephones.html">Catalogue</a></span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"><span id="toastIcon"></span><span id="toastMsg"></span></div>
+  <script src="script.js" defer></script>
+</body>
+</html>

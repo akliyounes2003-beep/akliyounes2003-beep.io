@@ -1,0 +1,23 @@
+<svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="none" />
+
+  <!-- Téléphone -->
+  <rect x="85" y="50" rx="15" ry="15" width="80" height="150" fill="#111" stroke="#666" stroke-width="4"/>
+  <circle cx="125" cy="60" r="6" fill="#aaa"/>
+
+  <!-- Signe de l'infini dépassant -->
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFA500" />
+      <stop offset="100%" stop-color="#FF4500" />
+    </linearGradient>
+  </defs>
+
+  <path d="
+    M 30 125 
+    C 60 60, 120 60, 125 125 
+    C 130 190, 190 190, 220 125" 
+    stroke="url(#grad)" stroke-width="10" fill="none"
+    stroke-linecap="round" stroke-linejoin="round"
+    style="filter: drop-shadow(0 0 6px orange);" />
+</svg>

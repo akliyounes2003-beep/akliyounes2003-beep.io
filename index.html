@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhoneStore — Smartphones Premium</title>
+  <meta name="description" content="Réservez les meilleurs smartphones Samsung, iPhone, Xiaomi et OPPO. Livraison rapide, prix compétitifs.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar-brand">
+      <img src="logo.svg" alt="PhoneStore Logo">
+      <span class="brand-name">Phone<span>Store</span></span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="telephones.html">Téléphones</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="reservation.html">Réserver</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" class="nav-cta">Connexion</a></li>
+    </ul>
+
+    <div class="nav-user" id="navUser" style="display:none">
+      <span class="nav-user-badge" id="userBadge"></span>
+      <a href="#" id="logoutBtn">Se déconnecter</a>
+    </div>
+
+    <div class="hamburger" id="hamburger" role="button" aria-label="Menu" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          Nouveautés 2025 disponibles
+        </div>
+        <h1 class="hero-title">
+          Le meilleur smartphone<br>
+          vous attend <span class="accent">ici</span>
+        </h1>
+        <p class="hero-subtitle">
+          Samsung, Apple, Xiaomi, OPPO — les plus grandes marques réunies en un seul endroit. Réservez en ligne, récupérez en boutique.
+        </p>
+        <div class="hero-actions">
+          <a href="telephones.html" class="btn-primary">
+            Voir les téléphones
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="reservation.html" class="btn-secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Réserver maintenant
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">30<span>+</span></div>
+            <div class="hero-stat-label">Modèles en stock</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">4</div>
+            <div class="hero-stat-label">Grandes marques</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">24<span>h</span></div>
+            <div class="hero-stat-label">Livraison express</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-glow"></div>
+        <div class="hero-phone-stage">
+          <div class="hero-badge">⚡ Nouveau</div>
+          <div class="hero-phone-card side-1">
+            <img src="phones/samsung-z-fold6.avif" alt="Samsung Z Fold6">
+          </div>
+          <div class="hero-phone-card main">
+            <img src="phones/samsung s25 ultra.avif" alt="Samsung Galaxy S25 Ultra">
+          </div>
+          <div class="hero-phone-card side-2">
+            <img src="phones/OPPO Find X8 Pro.png" alt="OPPO Find X8 Pro">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ BRANDS ══ -->
+  <section class="brands-section">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Nos marques partenaires</p>
+    </div>
+    <div class="brands-grid">
+      <a href="telephones.html#samsung" class="brand-pill reveal">
+        <img class="brand-pill-img" src="phones/samsung s25 ultra.avif" alt="Samsung">
+        <span class="brand-pill-name">Samsung</span>
+        <span class="brand-pill-count">9 modèles</span>
+      </a>
+      <a href="telephones.html#apple" class="brand-pill reveal">
+        <img class="brand-pill-img" src="phones/iphone16pro.jpeg" alt="Apple">
+        <span class="brand-pill-name">Apple</span>
+        <span class="brand-pill-count">5 modèles</span>
+      </a>
+      <a href="telephones.html#xiaomi" class="brand-pill reveal">
+        <img class="brand-pill-img" src="phones/redmi note14 pro 5g.webp" alt="Xiaomi">
+        <span class="brand-pill-name">Xiaomi Redmi</span>
+        <span class="brand-pill-count">6 modèles</span>
+      </a>
+      <a href="telephones.html#oppo" class="brand-pill reveal">
+        <img class="brand-pill-img" src="phones/OPPO Find X8 Pro.png" alt="OPPO">
+        <span class="brand-pill-name">OPPO</span>
+        <span class="brand-pill-count">6 modèles</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══ CAROUSEL ══ -->
+  <section class="carousel-section">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Sélection vedette</p>
+      <h2 class="section-title">Nos téléphones en vedette</h2>
+      <p class="section-subtitle">Survolez pour mettre en pause • Cliquez pour réserver</p>
+    </div>
+    <div class="marquee-wrapper">
+      <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+  </section>
+
+  <!-- ══ FEATURES ══ -->
+  <section class="features-section">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Pourquoi nous ?</p>
+      <h2 class="section-title">Une expérience pensée pour vous</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">🚀</div>
+        <h3 class="feature-title">Réservation en 2 minutes</h3>
+        <p class="feature-desc">Processus ultra-simplifié : choisissez votre modèle, remplissez le formulaire, c'est réservé. Aucune inscription obligatoire.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🏆</div>
+        <h3 class="feature-title">Dernières sorties</h3>
+        <p class="feature-desc">Samsung Galaxy S25, iPhone 16 Pro, OPPO Find X8 Pro… Accédez aux nouveautés avant tout le monde.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🔒</div>
+        <h3 class="feature-title">100 % sécurisé</h3>
+        <p class="feature-desc">Vos données sont protégées. Paiement à la livraison uniquement — aucune transaction bancaire en ligne.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📞</div>
+        <h3 class="feature-title">Support dédié</h3>
+        <p class="feature-desc">Notre équipe est disponible 7j/7 pour répondre à toutes vos questions avant et après réservation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <img src="logo.svg" alt="Logo" class="footer-brand-logo">
+        <div class="footer-brand-name">Phone<span>Store</span></div>
+        <p class="footer-desc">Votre destination pour les meilleurs smartphones des plus grandes marques mondiales. Réservez facilement, recevez rapidement.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Navigation</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="telephones.html">Téléphones</a></li>
+          <li><a href="services.html">Services</a></li>
+      <li><a href="reservation.html">Réserver</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Marques</p>
+        <ul class="footer-links">
+          <li><a href="telephones.html#samsung">Samsung</a></li>
+          <li><a href="telephones.html#apple">Apple iPhone</a></li>
+          <li><a href="telephones.html#xiaomi">Xiaomi Redmi</a></li>
+          <li><a href="telephones.html#oppo">OPPO</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Compte</p>
+        <ul class="footer-links">
+          <li><a href="login.html">Connexion</a></li>
+          <li><a href="reservation.html">Mes réservations</a></li>
+          <li><a href="contact.html">Aide & Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PhoneStore. Tous droits réservés.</span>
+      <span>Fait avec ❤️ — Paris, France</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"><span id="toastIcon"></span><span id="toastMsg"></span></div>
+  <script src="script.js" defer></script>
+</body>
+</html>
